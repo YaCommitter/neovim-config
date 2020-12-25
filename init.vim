@@ -1,35 +1,22 @@
-if exists('g:gui_oni')
-    call plug#begin('~/.vim/plugged')
+call plug#begin('~/.nvim/plugged')
 
-    Plug 'Shougo/deoplete.nvim'
-    Plug 'OmniSharp/omnisharp-vim'
-    Plug 'editorconfig/editorconfig-vim'
-    Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-sensible'
+Plug 'editorconfig/editorconfig-vim'
 
-    call plug#end()
-else
-    call plug#begin('~/.vim/plugged')
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'majutsushi/tagbar'
+Plug 'scrooloose/nerdtree'
+Plug 'itchyny/lightline.vim'
 
-    Plug 'Shougo/deoplete.nvim'
-    Plug 'OmniSharp/omnisharp-vim'
-    Plug 'editorconfig/editorconfig-vim'
-    Plug 'tpope/vim-sensible'
-    Plug 'mxw/vim-jsx'
+Plug 'Shougo/deoplete.nvim'
+Plug 'zchee/deoplete-clang'
+Plug 'OmniSharp/omnisharp-vim'
+Plug 'mxw/vim-jsx'
+Plug 'elzr/vim-json'
+Plug 'vim-latex/vim-latex'
+Plug 'leafgarland/typescript-vim'
 
-    " Neovim specific
-    " Plug 'vim-syntastic/syntastic'
-    Plug 'ctrlpvim/ctrlp.vim'
-    Plug 'scrooloose/nerdtree'
-    Plug 'elzr/vim-json'
-    Plug 'zchee/deoplete-clang'
-    Plug 'itchyny/lightline.vim'
-    Plug 'majutsushi/tagbar'
-    Plug 'vim-latex/vim-latex'
-    Plug 'leafgarland/typescript-vim'
-    " Plug 'lervag/vimtex'
-
-    call plug#end()
-endif
+call plug#end()
 
 " Exclude auto-generated or external files from ctrlp
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
@@ -52,41 +39,31 @@ set smarttab
 
 set list
 
-" Editor config
-" let g:EditorConfig_verbose = 1
-" let g:EditorConfig_core_mode = 'external_command'
-
 " Enable deoplete plugin on startup
 let g:deoplete#enable_at_startup = 1
 
 " Use smartcase.
-let g:deoplete#enable_smart_case = 1
+call deoplete#custom#option({'enable_smart_case': 1})
 
 " Copy to clipboard
 set clipboard=unnamedplus
 
-if !exists('g:gui_oni')
-    " Vim response time
-    set updatetime=1000
+" Vim response time
+set updatetime=1000
 
-    " Show typed commands
-    set showcmd
+" Show typed commands
+set showcmd
 
-    " NERDTree config
-    nnoremap <leader>tt :NERDTreeToggle<CR>
+" NERDTree config
+nnoremap <leader>tt :NERDTreeToggle<CR>
 
-    " Show the preview in the bottom of a sreen
-    set splitbelow
+" Show the preview in the bottom of a sreen
+set splitbelow
 
-    " Configure ctags
-    " let g:tagbar_ctags_bin='/path/to/ctags/binaries'
+" Tagbar config
+nnoremap <leader>tb :TagbarToggle<CR>
 
-    " Tagbar config
-    nnoremap <leader>tb :TagbarToggle<CR>
-
-    let g:syntastic_cpp_config_file = ".syntastic_cpp_config"
-endif
-
+let g:syntastic_cpp_config_file = ".syntastic_cpp_config"
 
 " 80 characters' column
 set cc=81
