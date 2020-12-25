@@ -8,7 +8,7 @@ Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
 Plug 'itchyny/lightline.vim'
 
-Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'zchee/deoplete-clang'
 Plug 'OmniSharp/omnisharp-vim'
 Plug 'mxw/vim-jsx'
@@ -26,9 +26,6 @@ set number
 
 " Enable syntax highlighting
 syntax enable
-
-" Enable using language-specifig settings ~/.config/nvim/after/ftplugin
-" filetype plugin on
 
 " Spaces instead of tabs
 set tabstop=4
