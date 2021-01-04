@@ -57,12 +57,13 @@ nnoremap <Leader>th :OmniSharpHighlightTypes<CR>
 
 " Deoplete config
 " {{{
-    let g:deoplete#sources={}
-    let g:deoplete#sources._=['buffer', 'ultisnips', 'file', 'dictionary']
-    let g:deoplete#sources.cs=['omni', 'file', 'buffer', 'ultisnips']
+    call deoplete#custom#option('sources', {
+        \ 'cs' : ['omni', 'file', 'buffer', 'ultisnips']
+        \ })
 
-    let g:deoplete#omni#input_patterns={}
-    let g:deoplete#omni#input_patterns.cs=['\w*']
+    call deoplete#custom#var('omni', 'input_patterns', {
+        \ '_' : '\w*'
+        \ })
 
     " <TAB>: completion.
     inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"

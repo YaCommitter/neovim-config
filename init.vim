@@ -38,6 +38,9 @@ set list
 
 " Enable deoplete plugin on startup
 let g:deoplete#enable_at_startup = 1
+call deoplete#custom#option('sources', {
+\ '_' : ['buffer', 'ultisnips', 'file', 'dictionary']
+\ })
 
 " Use smartcase.
 call deoplete#custom#option({'enable_smart_case': 1})
