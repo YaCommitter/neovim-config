@@ -62,9 +62,9 @@ nnoremap <leader>tb :TagbarToggle<CR>
 
 let g:syntastic_cpp_config_file = ".syntastic_cpp_config"
 
-" 80 characters' column
-set cc=81
-" 80 characters' column color
+" 100 characters' column
+set cc=101
+" 100 characters' column color
 highlight ColorColumn ctermbg=0
 
 " Custom macros
