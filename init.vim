@@ -15,6 +15,7 @@ Plug 'mxw/vim-jsx'
 Plug 'elzr/vim-json'
 Plug 'vim-latex/vim-latex'
 Plug 'leafgarland/typescript-vim'
+Plug 'vim-syntastic/syntastic'
 
 call plug#end()
 
