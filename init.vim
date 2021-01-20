@@ -32,6 +32,7 @@ set clipboard=unnamedplus
 
 " NERDTree config
 nnoremap <leader>tt :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
 
 " Show the preview in the bottom of a sreen
 set splitbelow
