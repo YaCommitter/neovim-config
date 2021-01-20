@@ -1,6 +1,7 @@
 call plug#begin('~/.nvim/plugged')
 
 Plug 'tpope/vim-sensible'
+Plug 'pangloss/vim-javascript'
 Plug 'editorconfig/editorconfig-vim'
 
 Plug 'ctrlpvim/ctrlp.vim'
